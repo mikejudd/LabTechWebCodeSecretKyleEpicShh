@@ -1,10 +1,20 @@
-<div class="right_col" role="main">
-    <div class="maincontent">
-        <div class="maincontentinner">
-            <div class="row-fluid">
-                <div class="page-content">
-                    <div class="container-fluid">
+<!-- BEGIN PAGE CONTENT -->
+    <section class="main-container">
+            <!--Page Header-->
+            <div class="header">
+                <div class="header-content">
+                    <div class="page-title"><i class="icon-display4"></i> Client List</div>
+                    <ul class="breadcrumb">
+                        <li><a href="index.htm">Home</a></li>
+                        <li><a href="index2.htm#">Clients</a></li>
+                    </ul>                   
+                </div>
+            </div>      
+            <!--/Page Header-->
+                 
+                 <!-- /top tiles -->
 
+        <div class="container-fluid page-content">
                         <div class="row">
                             <div class="col-lg-12">
 
@@ -20,7 +30,6 @@
                                             <table class='table responsive table-striped table-bordered dataTable'>
                                                 <thead>
                                                     <tr>
-                                                        <th><?php echo $this->Paginator->sort('ComputerID'); ?></th>
                                                         <th><?php echo $this->Paginator->sort('Name'); ?></th>
                                                         <th><?php echo $this->Paginator->sort('ClientID'); ?></th>
                                                         <th>Logged in User</th>
@@ -33,8 +42,7 @@
                                                 <tbody>
                                                     <?php foreach ($computer as $cscore): ?>
                                                         <tr>
-                                                            <td><?php echo $this->Html->link($cscore['Computer']['ComputerID'], array('controller' => 'Computers', 'action' => 'computer', $cscore['Computer']['ComputerID'])); ?> </td>
-                                                            <td><?php echo $cscore['Computer']['Name']; ?> </td>
+                                                           <td><?php echo $this->Html->link($cscore['Computer']['Name'], array('controller' => 'computers', 'action' => 'computer', 'id' => $cscore['Computer']['ComputerID'])); ?> </td>
                                                             <td><?php echo $cscore['clients']['Name']; ?> </td>
                                                             <td><?php echo $cscore['Computer']['Username']; ?> </td>
                                                             <td><?php echo $cscore['Computer']['OS']; ?> </td>
